@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript">
+			// This block of code is suppose to remove an annoying message on mobile and has to trigger before JQM is loaded
+    	    $(document).bind('mobileinit',function(){
+	            $.mobile.loadingMessage = false;
+        	})
+    	</script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<title>Todays Weather</title>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<!-- Header containing logo and search toggle button -->
+				<a href="index.html"><img src="img/header.png" alt="Damn Weather"></a>
+				<button id="toggleSearch" data-role="button" data-ajax="false">Search</button>
+			</header>
+
+			<div class="forecast">
+				<!-- information box with weatherdata for current location -->
+				<h2><span id="location"></span><span id="rightSide">Your location</span></h2>
+				<div id="imgdiv">
+					<img id="img" src="">
+					<span id="temp"></span>&deg;C
+					and <span id="desc"></span>
+				</div>
+				Wind: <span id="wind"></span>
+			</div>
+
+			<div id="saveFav">
+				<!-- search options, hidden from start -->
+				<h2>Search</h2>
+				<div >
+					<input type="text" id="searchCountry" placeholder="Country...">
+					<input type="text" id="searchCity" placeholder="City...">
+					<button id="search" data-role="button" data-ajax="false">Search</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
